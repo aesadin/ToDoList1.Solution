@@ -6,18 +6,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ToDoList.Controllers
 {
-  public class ItemsController : Controller
+  public class CategoriesController : Controller
   {
     private readonly ToDoListContext _db;
 
-    public ItemsController(ToDoListContext db)
+    public CategoriesController(ToDoListContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Item> model = _db.Items.ToList();
+      List<Category> model = _db.Categories.ToList();
       return View(model);
     }
 
